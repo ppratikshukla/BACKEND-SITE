@@ -9,6 +9,7 @@ const app = express();
 
 app.use(cors({
   origin: 'https://frontend-852l.onrender.com'
+  
 }));
 app.use(express.json());
 
@@ -24,7 +25,7 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'AttendApp API is running', timestamp: new Date() });
 });
 
-const cors = require('cors');
+
 
 
 
