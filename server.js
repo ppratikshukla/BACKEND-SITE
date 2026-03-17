@@ -25,6 +25,12 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'AttendApp API is running', timestamp: new Date() });
 });
 
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'https://frontend-852l.onrender.com'
+}));
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
@@ -37,5 +43,7 @@ mongoose.connect(process.env.MONGODB_URI)
     console.error('❌ MongoDB connection failed:', err.message);
     process.exit(1);
   });
+
+
 
 module.exports = app;
