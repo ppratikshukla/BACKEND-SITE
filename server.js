@@ -8,9 +8,13 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'https://frontend-852l.onrender.com'
-  
-}));
+  origin: [
+    'https://attentionsite.netlify.app',
+    'https://frontend-852l.onrender.com',
+    'http://localhost:3000'
+  ],
+  credentials: true
+}));;
 app.use(express.json());
 
 // Routes
