@@ -26,7 +26,9 @@ app.get('/api/health', (req, res) => {
 });
 
 
-
+app.get("/", (req, res) => {
+  res.send("✅ Attendance App Backend is running!");
+});
 
 
 // Connect to MongoDB
